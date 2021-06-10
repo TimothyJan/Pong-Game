@@ -9,6 +9,7 @@ class Scoreboard(Turtle):
         self.hideturtle()
         self.l_score = 0
         self.r_score = 0
+        self.winner = None
         self.update_scoreboard()
     
     def update_scoreboard(self):
@@ -25,3 +26,9 @@ class Scoreboard(Turtle):
     def r_point(self):
         self.r_score += 1
         self.update_scoreboard()
+    
+    def game_over(self, winner):
+        self.goto(0,50)
+        self.write("Game Over!", align="center", font=("Courier", 50, "normal"))
+        self.goto(0,-50)
+        self.write(f"Winner: {winner}", align="center", font=("Courier", 50, "normal"))
